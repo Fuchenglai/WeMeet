@@ -1,0 +1,78 @@
+plugins {
+    id 'com.android.application'
+}
+
+/**
+ * 主Model App -> build.gradle
+ * N个副Model -> build.gradle
+ *
+ * 1.统一性
+ * 2.便于管理
+ * 3.版本管理
+ *
+ * Gradle构建的三个性能指标
+ * - 全量编译：全部编译 - Open Project
+ * - 代码增量编译：修改了Java/Kotlin下面的代码的时候编译
+ * - 资源增量编译：修改了res下面的资源文件的时候编译
+ */
+
+android {
+
+    //调试，加快Gradle构建速度
+    if(rootProject.hasProperty('devBuild')){
+        // splits.api.enable=false
+        splits.density.enable=false
+
+        //禁用png压缩
+        aaptOptions.cruncherEnabled = false
+
+    }
+
+
+    namespace 'com.lfc.wemeet'
+    compileSdk rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+
+    defaultConfig {
+        applicationId rootProject.ext.android["applicationId"]
+        minSdk rootProject.ext.android["minSdkVersion"]
+        targetSdk rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        //调试
+        resConfigs("xxhdpi")
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+
+
+    buildTypes {
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation rootProject.ext.dependencies["appcompat"]
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    //添加Framework依赖
+    implementation project(path: ':framework')
+}
