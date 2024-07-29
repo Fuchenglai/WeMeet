@@ -1,5 +1,9 @@
 package com.lfc.framework;
 
+
+/**
+ * Framework的路口，一个单例类
+ */
 public class Framework {
     private volatile static Framework myFramework;
 

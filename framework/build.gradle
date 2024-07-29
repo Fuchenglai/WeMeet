@@ -20,7 +20,7 @@ android {
 
     buildTypes {
         debug {
-            //自定义Gradle常量
+            //把自定义Gradle常量放到framework下，这样我们才能在framework中使用
             buildConfigField("boolean","LOG_DEBUG","true")
             buildConfigField("String","LOG_TAG","\"WeMeet\"")
             buildConfigField("String","SP_NAME","\"Config\"")
@@ -42,6 +42,7 @@ android {
 
 dependencies {
 
+    //v7
     implementation rootProject.ext.dependencies["appcompat"]
     implementation 'com.google.android.material:material:1.5.0'
     testImplementation 'junit:junit:4.13.2'

@@ -73,6 +73,6 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
-    //添加Framework依赖
+    //添加Framework依赖，这个是自定义的，它是根目录下的framework包
     implementation project(path: ':framework')
 }
