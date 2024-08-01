@@ -2,11 +2,15 @@ package com.lfc.framework.base;
 
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.lfc.framework.utils.SystemUI;
 
-public class BaseUIActivity extends AppCompatActivity {
+/**
+ * @Author: LaiFuCheng
+ * @CreateTime: 2024/7/30
+ * @Profile: 沉浸式
+ */
+
+public class BaseUIActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

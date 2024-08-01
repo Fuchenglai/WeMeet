@@ -7,8 +7,8 @@ import android.os.Message;
 import android.text.TextUtils;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
+import com.lfc.framework.base.BaseActivity;
 import com.lfc.framework.entity.Constants;
 import com.lfc.framework.utils.SpUtils;
 import com.lfc.wemeet.MainActivity;
@@ -19,7 +19,7 @@ import com.lfc.wemeet.R;
  * @CreateTime: 2024/7/31
  * @Profile: 启动页
  */
-public class IndexActivity extends AppCompatActivity {
+public class IndexActivity extends BaseActivity {
 
     /**
      * 1.把启动页全屏

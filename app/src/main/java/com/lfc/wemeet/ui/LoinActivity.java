@@ -1,12 +1,12 @@
 package com.lfc.wemeet.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
+import com.lfc.framework.base.BaseActivity;
 
 /**
  * @Author: LaiFuCheng
  * @CreateTime: 2024/7/31
  * @Profile: 登录页
  */
-public class LoinActivity extends AppCompatActivity {
+public class LoinActivity extends BaseActivity {
 
 }
