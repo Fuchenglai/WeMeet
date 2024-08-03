@@ -72,7 +72,7 @@ public class IndexActivity extends BaseActivity {
             String token = SpUtils.getInstance().getString(Constants.SP_TOKEN, "");
             if (TextUtils.isEmpty(token)) {
                 //跳转到登录页
-                intent.setClass(this, LoinActivity.class);
+                intent.setClass(this, LoginActivity.class);
             } else {
                 //跳转到主页
                 intent.setClass(this, MainActivity.class);

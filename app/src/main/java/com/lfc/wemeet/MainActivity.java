@@ -20,7 +20,7 @@ public class MainActivity extends BaseUIActivity {
         setContentView(R.layout.activity_main);
 
         MediaPlayerManager mediaPlayerManager = new MediaPlayerManager();
-        AssetFileDescriptor fileDescriptor = getResources().openRawResourceFd(R.raw.test);
+        AssetFileDescriptor fileDescriptor = getResources().openRawResourceFd(R.raw.guide);
         mediaPlayerManager.startPlay(fileDescriptor);
 
         mediaPlayerManager.setOnProgressListener(new MediaPlayerManager.OnMusicProgressListener() {

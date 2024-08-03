@@ -2,8 +2,8 @@ package com.lfc.framework.manager;
 
 import android.content.res.AssetFileDescriptor;
 import android.media.MediaPlayer;
-import android.os.Message;
 import android.os.Handler;
+import android.os.Message;
 
 import androidx.annotation.NonNull;
 
@@ -25,7 +25,7 @@ public class MediaPlayerManager {
     public static final int MEDIA_STATUS_STOP = 2;
 
     //当前状态
-    public static int MEDIA_STATUS = MEDIA_STATUS_PAUSE;
+    public int MEDIA_STATUS = MEDIA_STATUS_PAUSE;
 
     private MediaPlayer mMediaPlayer;
 

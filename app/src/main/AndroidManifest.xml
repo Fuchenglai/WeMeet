@@ -32,7 +32,7 @@
         <activity android:name=".ui.IndexActivity" />
 
         <!--登录-->
-        <activity android:name=".ui.LoinActivity" />
+        <activity android:name=".ui.LoginActivity" />
 
         <!--主页-->
         <activity

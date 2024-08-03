@@ -7,6 +7,6 @@ import com.lfc.framework.base.BaseActivity;
  * @CreateTime: 2024/7/31
  * @Profile: 登录页
  */
-public class LoinActivity extends BaseActivity {
+public class LoginActivity extends BaseActivity {
 
 }
