@@ -8,6 +8,7 @@ import cn.bmob.v3.Bmob;
 import cn.bmob.v3.BmobSMS;
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.LogInListener;
 import cn.bmob.v3.listener.QueryListener;
 
 /**
@@ -64,17 +65,17 @@ public class BmobManager {
      * @param smsCode  验证码
      * @param listener 回调
      */
-    /*public void signOrLoginByMobilePhone(String phone, String smsCode, LogInListener<User> listener) {
+    public void signOrLoginByMobilePhone(String phone, String smsCode, LogInListener<User> listener) {
         BmobUser.signOrLoginByMobilePhone(phone, smsCode, listener);
-    }*/
+    }
 
     /**
-     * 获取用户实体
+     * 获取本地用户对象
      * @return
      */
-    /*public User getUser(){
+    public User getUser(){
         return BmobUser.getCurrentUser(User.class);
-    }*/
+    }
 
     /**
      * 是否登陆

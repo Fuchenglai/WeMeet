@@ -1,14 +1,14 @@
 package com.lfc.wemeet;
 
-import android.content.res.AssetFileDescriptor;
 import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.RequiresApi;
 
 import com.lfc.framework.base.BaseUIActivity;
-import com.lfc.framework.manager.MediaPlayerManager;
-import com.lfc.framework.utils.LogUtils;
+import com.lfc.framework.bmob.BmobManager;
+import com.lfc.framework.bmob.User;
+import com.lfc.framework.utils.ToastUtils;
 
 
 public class MainActivity extends BaseUIActivity {
@@ -19,7 +19,7 @@ public class MainActivity extends BaseUIActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        MediaPlayerManager mediaPlayerManager = new MediaPlayerManager();
+        /*MediaPlayerManager mediaPlayerManager = new MediaPlayerManager();
         AssetFileDescriptor fileDescriptor = getResources().openRawResourceFd(R.raw.guide);
         mediaPlayerManager.startPlay(fileDescriptor);
 
@@ -28,7 +28,10 @@ public class MainActivity extends BaseUIActivity {
             public void OnProgress(int progress, int pos) {
                 LogUtils.e("pos" + pos);
             }
-        });
+        });*/
+
+        User user = BmobManager.getInstance().getUser();
+        ToastUtils.show(this, "user:" + user.getMobilePhoneNumber());
     }
 
 }

@@ -147,7 +147,7 @@ public class GuideActivity extends BaseUIActivity implements View.OnClickListene
         mGuideMusic.startPlay(file);
 
         //旋转动画
-        mAnim = AnimUtils.rotation(ivMusicSwitch);
+        mAnim = AnimUtils.rotation(ivMusicSwitch, 3 * 1000);
         mAnim.start();
     }
 

@@ -29,26 +29,26 @@
         <!--Bmob 添加ContentProvider信息 -->
         <provider
             android:name="cn.bmob.v3.util.BmobContentProvider"
-            android:authorities="com.lfc.wemeet.BmobContentProvider">
-        </provider>
+            android:authorities="com.lfc.wemeet.BmobContentProvider"></provider>
 
         <!--引导页-->
         <activity
             android:name=".ui.GuideActivity"
-            android:exported="true"
-            android:theme="@style/AppThemeFull">
+            android:theme="@style/AppThemeFull"></activity>
+
+        <!--引导-->
+        <activity android:name=".ui.IndexActivity" />
+
+        <!--登录-->
+        <activity
+            android:name=".ui.LoginActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!--引导-->
-        <activity android:name=".ui.IndexActivity" />
-
-        <!--登录-->
-        <activity android:name=".ui.LoginActivity" />
 
         <!--主页-->
         <activity

@@ -18,9 +18,9 @@ public class AnimUtils {
      * @param view
      * @return
      */
-    public static ObjectAnimator rotation(View view) {
+    public static ObjectAnimator rotation(View view,int duration) {
         ObjectAnimator mAnim = ObjectAnimator.ofFloat(view, "rotation", 0f, 360f);
-        mAnim.setDuration(3 * 1000);
+        mAnim.setDuration(duration);
         mAnim.setRepeatMode(ValueAnimator.RESTART);
         mAnim.setRepeatCount(ValueAnimator.INFINITE);
         mAnim.setInterpolator(new LinearInterpolator());

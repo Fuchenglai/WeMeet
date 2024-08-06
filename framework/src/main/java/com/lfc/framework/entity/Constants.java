@@ -12,4 +12,7 @@ public class Constants {
 
     //Token
     public static final String SP_TOKEN = "token";
+
+    //手机号码
+    public static final String SP_PHONE = "pone";
 }
