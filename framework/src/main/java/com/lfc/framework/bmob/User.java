@@ -1,7 +1,6 @@
 package com.lfc.framework.bmob;
 
 import cn.bmob.v3.BmobUser;
-
 /**
  * @Author: LaiFuCheng
  * @CreateTime: 2024/8/6
@@ -24,8 +23,8 @@ public class User extends BmobUser {
 
     //其他属性
 
-    //性别 true = 男 false = 女
-    private boolean sex = true;
+    //性别 1 = 男 0 = 女
+    private int sex = 1;
     //简介
     private String desc;
     //年龄
@@ -71,11 +70,8 @@ public class User extends BmobUser {
         this.photo = photo;
     }
 
-    public boolean isSex() {
-        return sex;
-    }
 
-    public void setSex(boolean sex) {
+    public void setSex(int sex) {
         this.sex = sex;
     }
 

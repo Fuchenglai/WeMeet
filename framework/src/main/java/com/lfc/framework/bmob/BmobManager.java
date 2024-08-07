@@ -2,12 +2,12 @@ package com.lfc.framework.bmob;
 
 import android.content.Context;
 
-import java.io.File;
+import com.lfc.framework.utils.LogUtils;
 
 import cn.bmob.v3.Bmob;
+import cn.bmob.v3.BmobObject;
 import cn.bmob.v3.BmobSMS;
 import cn.bmob.v3.BmobUser;
-import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.LogInListener;
 import cn.bmob.v3.listener.QueryListener;
 
@@ -16,10 +16,9 @@ import cn.bmob.v3.listener.QueryListener;
  * @CreateTime: 2024/8/5
  * @Profile: Bmob管理类
  */
-public class BmobManager {
+public class BmobManager extends BmobObject {
 
-    //private static final String BMOB_APP_ID = "eeb75e7daf854cebe6fd89b528c8e91b";//我的
-    private static final String BMOB_APP_ID = "f8efae5debf319071b44339cf51153fc";
+    private static final String BMOB_APP_ID = "66d010aeac119a0d64e0672dba9d1807";
 
     //单例封装
     private volatile static BmobManager mInstance = null;
@@ -45,6 +44,8 @@ public class BmobManager {
      * @param context
      */
     public void initBomb(Context context) {
+        //域名
+        //Bmob.resetDomain("http://open.cctvcloud.cn/8/");
         Bmob.initialize(context, BMOB_APP_ID);
     }
 
@@ -55,6 +56,7 @@ public class BmobManager {
      * @param listener 回调
      */
     public void requestSMS(String phone, QueryListener<Integer> listener) {
+        LogUtils.i("电话号码为：" + phone);
         BmobSMS.requestSMSCode(phone, "", listener);
     }
 
@@ -71,31 +73,34 @@ public class BmobManager {
 
     /**
      * 获取本地用户对象
+     *
      * @return
      */
-    public User getUser(){
+    public User getUser() {
         return BmobUser.getCurrentUser(User.class);
     }
 
     /**
      * 是否登陆
+     *
      * @return
      */
-    public boolean islogin(){
+    public boolean islogin() {
         return BmobUser.isLogin();
     }
 
     /**
      * 第一次上传头像
+     *
      * @param nickName
      * @param file
      */
-    public void uploadFirstPhoto(final String nickName, final File file, final OnUploadPhotoListener onUploadPhotoListener){
-        /**
+    /*public void uploadFirstPhoto(final String nickName, final File file, final OnUploadPhotoListener onUploadPhotoListener) {
+        *//**
          * 1.上传文件拿到地址
          * 2.更新用户信息
-         */
-        /*final User user = getUser();
+         *//*
+        *//*final User user = getUser();
         final BmobFile bmobFile = new BmobFile(file);
         bmobFile.uploadblock(new UploadFileListener() {
             @Override
@@ -121,13 +126,14 @@ public class BmobManager {
                     });
                 }
             }
-        });*/
+        });*//*
     }
 
-    public interface OnUploadPhotoListener{
+    /*public interface OnUploadPhotoListener {
         void OnUploadDone();
+
         void OnUploadFail(BmobException e);
-    }
+    }*/
 
     /**
      * 根据电话号码查询用户

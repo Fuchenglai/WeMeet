@@ -4,6 +4,7 @@ package com.lfc.framework;
 import android.content.Context;
 
 import com.lfc.framework.bmob.BmobManager;
+import com.lfc.framework.utils.LogUtils;
 import com.lfc.framework.utils.SpUtils;
 
 /**
@@ -12,15 +13,15 @@ import com.lfc.framework.utils.SpUtils;
 public class Framework {
     private volatile static Framework myFramework;
 
-    private Framework(){
+    private Framework() {
 
     }
 
-    public static Framework getFramework(){
-        if(myFramework==null){
-            synchronized (Framework.class){
-                if(myFramework==null){
-                    myFramework=new Framework();
+    public static Framework getFramework() {
+        if (myFramework == null) {
+            synchronized (Framework.class) {
+                if (myFramework == null) {
+                    myFramework = new Framework();
                 }
             }
         }
@@ -29,10 +30,12 @@ public class Framework {
 
     /**
      * 初始化框架
+     *
      * @param context
      */
-    public void initFramework(Context context){
+    public void initFramework(Context context) {
         SpUtils.getInstance().initSp(context);
+        LogUtils.i("执行了Framework的初始化");
         BmobManager.getInstance().initBomb(context);
         //CloudManager.getInstance().initCloud(context);
     }

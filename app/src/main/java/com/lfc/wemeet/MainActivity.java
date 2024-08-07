@@ -6,9 +6,6 @@ import android.os.Bundle;
 import androidx.annotation.RequiresApi;
 
 import com.lfc.framework.base.BaseUIActivity;
-import com.lfc.framework.bmob.BmobManager;
-import com.lfc.framework.bmob.User;
-import com.lfc.framework.utils.ToastUtils;
 
 
 public class MainActivity extends BaseUIActivity {
@@ -30,8 +27,8 @@ public class MainActivity extends BaseUIActivity {
             }
         });*/
 
-        User user = BmobManager.getInstance().getUser();
-        ToastUtils.show(this, "user:" + user.getMobilePhoneNumber());
+        /*User user = BmobManager.getInstance().getUser();
+        ToastUtils.show(this, "user:" + user.getMobilePhoneNumber());*/
     }
 
 }
