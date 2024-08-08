@@ -12,14 +12,21 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 
 import com.lfc.framework.base.BaseUIActivity;
+import com.lfc.framework.bmob.BmobManager;
+import com.lfc.framework.bmob.User;
 import com.lfc.framework.entity.Constants;
 import com.lfc.framework.manager.DialogManager;
+import com.lfc.framework.utils.JumpUtils;
 import com.lfc.framework.utils.SpUtils;
 import com.lfc.framework.utils.ToastUtils;
 import com.lfc.framework.view.DialogView;
 import com.lfc.framework.view.LoadingView;
 import com.lfc.framework.view.TouchPictureV;
+import com.lfc.wemeet.MainActivity;
 import com.lfc.wemeet.R;
+
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.LogInListener;
 
 /**
  * @Author: LaiFuCheng
@@ -160,8 +167,10 @@ public class LoginActivity extends BaseUIActivity implements View.OnClickListene
             ToastUtils.show(this, R.string.toast_login_code_null);
             return;
         }
+
+        //显示LoadView
         mLodingView.show(getString(R.string.text_login_now_login_text));
-        /*BmobManager.getInstance().signOrLoginByMobilePhone(phone, code, new LogInListener<User>() {
+        BmobManager.getInstance().signOrLoginByMobilePhone(phone, code, new LogInListener<User>() {
             @Override
             public void done(User user, BmobException e) {
                 if (e == null) {
@@ -177,7 +186,7 @@ public class LoginActivity extends BaseUIActivity implements View.OnClickListene
                     ToastUtils.show(LoginActivity.this, R.string.toast_error);
                 }
             }
-        });*/
+        });
     }
 
     /**
